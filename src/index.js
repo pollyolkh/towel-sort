@@ -1,6 +1,13 @@
+module.exports = function towelSort(matrix) {
+  if (!matrix) return [];
 
-// You should implement your task here.
+  const sortedArray = matrix.reduce((result, row, index) => {
+    if (index % 2 === 0) {
+      return result.concat(row);
+    } else {
+      return result.concat(row.reverse());
+    }
+  }, []);
 
-module.exports = function towelSort (matrix) {
-  return [];
-}
+  return sortedArray;
+};
